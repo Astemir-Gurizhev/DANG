@@ -1,53 +1,130 @@
 .header {
-    padding-top: 2em;
-    padding-bottom: 2em;
-    background: rgba(0, 0, 0, 0.315);
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background: rgba(0, 0, 0, 0.315);
 }
 .container {
-    max-width: 1160px;
-    margin: 0 auto;
+  max-width: 1160px;
+  margin: 0 auto;
 }
 .headerRow {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.headerLeft {
-    display: flex;
-    align-items: center;
-    gap: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: 30px;
 }
 .headerMenu {
-    display: flex;
-    gap: 5em;
+  display: flex;
+  gap: 5em;
 }
 .headerMenuLink {
-    display: inline-block;
-    color: white;
-    font-family: 'Montserrat Regular';
-    transition: 0.2s;
-    padding: 3px 8px;
+  display: inline-block;
+  color: white;
+  font-family: "Montserrat Regular";
+  transition: 0.2s;
+  padding: 3px 8px;
 }
-.headerMenuLink:hover {
-    box-shadow: 0 0 14px 6px red;
-    background: red;
-    border-radius: 5px;
-   
-}
+
 .headerLogo {
-    width: 5em;
-    height: 5em;
-    border-radius: 50%;
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  background: white;
+  transition: 0.3s;
 }
+.mobileLogo {
+    display: none;
+}
+
 .headerRightIcon img {
-    display: inline-block;
-    background: white;
-    padding: 5px;
-    transition: 0.7s;
+  display: inline-block;
+  background: white;
+  padding: 5px;
+  transition: 0.7s;
+  border-radius: 10px;
 }
-.headerRightIcon img:hover {
-    background: red;
-    box-shadow: 0 0 14px 6px red;
-    transform: rotate(360deg);
-    border-radius: 10px;
-}
+
+
+/* Эффекты наведения только на экранах больше 920px */
+@media (min-width: 921px) {
+    .headerMenuLink:hover {
+      box-shadow: 0 0 14px 6px red;
+      background: red;
+      border-radius: 5px;
+    }
+    
+    .headerLogo:hover {
+      box-shadow: 0 0 18px 8px rgba(255, 0, 0, 0.575);
+      background: red;
+    }
+  
+    .headerRightIcon img:hover {
+      background: red;
+      box-shadow: 0 0 14px 6px red;
+      transform: rotate(360deg);
+    }
+  }
+
+/* Стили для бургер-меню */
+.burger {
+    display: none; /* Скрываем бургер-меню по умолчанию */
+    font-size: 1.5em; /* Размер бургер-меню */
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Стили для меню оверлея */
+  .menuOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Убедитесь, что меню поверх других элементов */
+    
+  }
+  
+  .menuContent {
+    background: rgb(255, 255, 255);
+    padding: 3em;
+    border-radius: 8px;
+    color: black;
+    width: 70vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    justify-content: space-between;
+  }
+  .headerMenuMobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    font-size: .8em;
+  }
+
+  .menuContent .headerMenuLink {
+    color: black;
+    font-size: 2em;
+   
+  }
+  /* Мобильные стили */
+  @media (max-width: 920px) {
+    .headerMenu {
+      display: none; /* Скрываем обычное меню */
+    }
+  
+    .burger {
+      display: block; /* Показываем бургер-меню на мобильных */
+    }
+   
+  }

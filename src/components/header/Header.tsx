@@ -1,31 +1,65 @@
-import {Link} from "react-router-dom"
-import styles from "./Header.module.css"
-import logo from "../../assets/header/logo2.png"
-import tg from "../../assets/header/tg.png"
+import { Link } from "react-router-dom";
+import { useState } from "react"; // Импортируем useState для состояния
+import styles from "./Header.module.css";
+import logo from "../../assets/header/logo2.png";
+import tg from "../../assets/header/tg.png";
+import HeaderMenuItem from "./HeaderMenuItem.tsx";
+
 function Header() {
-    return (
-        <>
-            <div className={styles.header}>
-                <div className={styles.container}>
-                    <div className={styles.headerRow}>
-                        <div className={styles.headerLeft}>
-                            <Link to={'/'}>
-                                <img src={logo} alt="" className={styles.headerLogo} />
-                            </Link>
-                            <ul className={styles.headerMenu}>
-                                <li><Link to={'/'} className={styles.headerMenuLink}>Home</Link></li>
-                                <li><Link to={'/about'} className={styles.headerMenuLink}>About</Link></li>
-                                <li><Link to={'/contacts'} className={styles.headerMenuLink}>Contacts</Link></li>
-                            </ul>
-                        </div>
-                        <div className="headerRight">
-                           <a href="https://t.me/GurizhevAstemir" className={styles.headerRightIcon}> <img src={tg} alt="" /> </a> 
-                        </div>
-                    </div>
-                </div>
+  const [menuOpen, setMenuOpen] = useState(false); // Состояние для управления меню
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  return (
+    <>
+      <div className={styles.header}>
+        <div className={styles.container}>
+          <div className={styles.headerRow}>
+            <button className={styles.burger} onClick={toggleMenu}>
+              &#9776; {/* Символ бургер-меню */}
+            </button>
+            <Link to={"/"}>
+              <img src={logo} alt="logo" className={styles.headerLogo} />
+            </Link>
+            <ul className={styles.headerMenu}>
+              <HeaderMenuItem link="/" name="Home" />
+              <HeaderMenuItem link="/about" name="About" />
+              <HeaderMenuItem link="/contacts" name="Contacts" />
+            </ul>
+
+            
+            <div className="headerRight">
+              <a
+                href="https://t.me/GurizhevAstemir"
+                className={styles.headerRightIcon}
+              >
+                <img src={tg} alt="Telegram" />
+              </a>
             </div>
-        </>
-    )
+          </div>
+        </div>
+      </div>
+      {menuOpen && (
+        <div className={styles.menuOverlay} onClick={toggleMenu}>
+          <div
+            className={styles.menuContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <ul className={styles.headerMenuMobile}>
+              <HeaderMenuItem link="/" name="Home" />
+              <HeaderMenuItem link="/about" name="About" />
+              <HeaderMenuItem link="/contacts" name="Contacts" />
+            </ul>
+            <Link to={"/"}>
+              <img src={logo} alt="logo" className={styles.headerLogo} />
+            </Link>
+          </div>
+        </div>
+      )}
+    </>
+  );
 }
 
-export default Header
+export default Header;
