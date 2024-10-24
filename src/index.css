@@ -1,0 +1,153 @@
+/*zeroing out styles*/
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*===============================================*/
+
+@font-face {
+  font-family: 'Montserrat Light';
+  font-weight: 300;
+  src: local('Montserrat Light'), local('Montserrat'),
+  url('./assets/Fonts/Montserrat-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat Regular';
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat'),
+  url('./assets/Fonts/Montserrat-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat Medium';
+  font-weight: 500;
+  src: local('Montserrat Medium'), local('Montserrat'),
+  url('./assets/Fonts/Montserrat-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat SemiBold';
+  font-weight: 600;
+  src: local('Montserrat SemiBold'), local('Montserrat'),
+  url('./assets/Fonts/Montserrat-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat Bold';
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat'),
+  url('./assets/Fonts/Montserrat-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat ExtraBold';
+  font-weight: 800;
+  src: local('Montserrat ExtraBold'), local('Montserrat'),
+  url('./assets/Fonts/Montserrat-ExtraBold.ttf') format('truetype');
+}
+
+/*===============================================*/
+
+body {
+  background: #1C1B21;
+  color: white;
+  font-family: 'Montserrat Regular';
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Высота на всю страницу */
+}
+
+.main {
+  flex: 1; /* Основной контент будет занимать всё доступное пространство */
+}
+
+/* Общая ширина скроллбара */
+::-webkit-scrollbar{
+  width: 0px;  
+} 
+
+
