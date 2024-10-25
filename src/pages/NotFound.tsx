@@ -1,4 +1,4 @@
-function Notfoundpage() {
+function NotFound() {
     return (
         <>
             <h1> Страница не найдена </h1>
@@ -6,4 +6,4 @@ function Notfoundpage() {
     )
 }
 
-export {Notfoundpage}
+export {NotFound}

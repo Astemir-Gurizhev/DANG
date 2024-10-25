@@ -7,17 +7,17 @@
   max-width: 1160px;
   margin: 0 auto;
 }
-.headerRow {
+.row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-inline: 30px;
 }
-.headerMenu {
+.menu {
   display: flex;
   gap: 5em;
 }
-.headerMenuLink {
+.menuLink {
   display: inline-block;
   color: white;
   font-family: "Montserrat Regular";
@@ -25,7 +25,7 @@
   padding: 3px 8px;
 }
 
-.headerLogo {
+.logo {
   width: 5em;
   height: 5em;
   border-radius: 50%;
@@ -33,10 +33,10 @@
   transition: 0.3s;
 }
 .mobileLogo {
-    display: none;
+  display: none;
 }
 
-.headerRightIcon img {
+.icon {
   display: inline-block;
   background: white;
   padding: 5px;
@@ -44,87 +44,98 @@
   border-radius: 10px;
 }
 
-
-/* Эффекты наведения только на экранах больше 920px */
 @media (min-width: 921px) {
-    .headerMenuLink:hover {
-      box-shadow: 0 0 14px 6px red;
-      background: red;
-      border-radius: 5px;
-    }
-    
-    .headerLogo:hover {
-      box-shadow: 0 0 18px 8px rgba(255, 0, 0, 0.575);
-      background: red;
-    }
-  
-    .headerRightIcon img:hover {
-      background: red;
-      box-shadow: 0 0 14px 6px red;
-      transform: rotate(360deg);
-    }
+  .menuLink:hover {
+    box-shadow: 0 0 14px 6px red;
+    background: red;
+    border-radius: 5px;
   }
 
-/* Стили для бургер-меню */
+  .logo:hover {
+    box-shadow: 0 0 18px 8px rgba(255, 0, 0, 0.575);
+    background: red;
+  }
+
+  .icon:hover {
+    background: red;
+    box-shadow: 0 0 14px 6px red;
+    transform: rotate(360deg);
+  }
+}
+
 .burger {
-    display: none; /* Скрываем бургер-меню по умолчанию */
-    font-size: 1.5em; /* Размер бургер-меню */
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-  
-  /* Стили для меню оверлея */
-  .menuOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Убедитесь, что меню поверх других элементов */
-    
-  }
-  
-  .menuContent {
-    background: rgb(255, 255, 255);
-    padding: 3em;
-    border-radius: 8px;
-    color: black;
-    width: 70vw;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-transform: uppercase;
-    justify-content: space-between;
-  }
-  .headerMenuMobile {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
-    font-size: .8em;
+  display: none;
+  cursor: pointer;
+  background: white;
+  width: 25px;
+  height: 3px;
+  position: relative;
+}
+.burger::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background: white;
+  bottom: 8px;
+}
+.burger::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background: white;
+  top: 8px;
+}
+
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.menuContent {
+  background: rgb(255, 255, 255);
+  padding: 3em;
+  border-radius: 8px;
+  color: black;
+  width: 70vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  justify-content: space-between;
+}
+.menuMobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  font-size: 0.8em;
+}
+
+.menuContent .menuLink {
+  color: black;
+  font-size: 2em;
+}
+
+@media (max-width: 920px) {
+  .menu {
+    display: none;
   }
 
-  .menuContent .headerMenuLink {
-    color: black;
-    font-size: 2em;
-   
+  .burger {
+    display: block;
   }
-  /* Мобильные стили */
-  @media (max-width: 920px) {
-    .headerMenu {
-      display: none; /* Скрываем обычное меню */
-    }
-  
-    .burger {
-      display: block; /* Показываем бургер-меню на мобильных */
-    }
-   
-  }
+}

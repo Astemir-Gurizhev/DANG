@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {Home} from "./pages/Home.tsx"
 import {About} from "./pages/About.tsx"
 import {Contacts} from "./pages/Contacts.tsx"
-import {Notfoundpage} from "./pages/Notfoundpage.tsx"
+import {NotFound} from "./pages/NotFound.tsx"
 import {Layout} from "./components/Layout.tsx"
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contacts" element={<Contacts />} />
-            <Route path="*" element={<Notfoundpage />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Router>

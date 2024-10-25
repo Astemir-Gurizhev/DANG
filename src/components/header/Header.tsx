@@ -1,12 +1,12 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react"; // Импортируем useState для состояния
-import styles from "./Header.module.css";
-import logo from "../../assets/header/logo2.png";
-import tg from "../../assets/header/tg.png";
-import HeaderMenuItem from "./HeaderMenuItem.tsx";
+import cn from "./Header.module.css";
+import logo from "../../assets/images/header/logo2.png";
+import tg from "../../assets/images/header/tg.png";
+import HeaderMenuItem from "./ui/MenuItem.tsx";
 
-function Header() {
-  const [menuOpen, setMenuOpen] = useState(false); // Состояние для управления меню
+const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false); 
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -14,46 +14,44 @@ function Header() {
 
   return (
     <>
-      <div className={styles.header}>
-        <div className={styles.container}>
-          <div className={styles.headerRow}>
-            <button className={styles.burger} onClick={toggleMenu}>
-              &#9776; {/* Символ бургер-меню */}
-            </button>
+      <header className={cn.header}>
+        <div className={cn.container}>
+          <div className={cn.row}>
+            <div className={cn.burger} onClick={toggleMenu}></div>
             <Link to={"/"}>
-              <img src={logo} alt="logo" className={styles.headerLogo} />
+              <img src={logo} alt="logo" className={cn.logo} />
             </Link>
-            <ul className={styles.headerMenu}>
+            <ul className={cn.menu}>
               <HeaderMenuItem link="/" name="Home" />
               <HeaderMenuItem link="/about" name="About" />
               <HeaderMenuItem link="/contacts" name="Contacts" />
             </ul>
 
             
-            <div className="headerRight">
+            <div className={cn.icons}>
               <a
                 href="https://t.me/GurizhevAstemir"
-                className={styles.headerRightIcon}
+                className={cn.icon}
               >
                 <img src={tg} alt="Telegram" />
               </a>
             </div>
           </div>
         </div>
-      </div>
+      </header>
       {menuOpen && (
-        <div className={styles.menuOverlay} onClick={toggleMenu}>
+        <div className={cn.menuOverlay} onClick={toggleMenu}>
           <div
-            className={styles.menuContent}
+            className={cn.menuContent}
             onClick={(e) => e.stopPropagation()}
           >
-            <ul className={styles.headerMenuMobile}>
+            <ul className={cn.menuMobile}>
               <HeaderMenuItem link="/" name="Home" />
               <HeaderMenuItem link="/about" name="About" />
               <HeaderMenuItem link="/contacts" name="Contacts" />
-            </ul>
+            </ul> 
             <Link to={"/"}>
-              <img src={logo} alt="logo" className={styles.headerLogo} />
+              <img src={logo} alt="logo" className={cn.logo} />
             </Link>
           </div>
         </div>
