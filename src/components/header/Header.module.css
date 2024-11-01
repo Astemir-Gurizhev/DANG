@@ -23,6 +23,13 @@
   font-family: "Montserrat Regular";
   transition: 0.2s;
   padding: 3px 8px;
+
+}
+
+.menuMobile .menuLink {
+  color: black;
+  font-size: 2em;
+  font-family: "Montserrat Regular";
 }
 
 .logo {
@@ -90,32 +97,6 @@
   top: 8px;
 }
 
-.menuOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.menuContent {
-  background: rgb(255, 255, 255);
-  padding: 3em;
-  border-radius: 8px;
-  color: black;
-  width: 70vw;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-transform: uppercase;
-  justify-content: space-between;
-}
 .menuMobile {
   display: flex;
   flex-direction: column;
@@ -125,10 +106,6 @@
   font-size: 0.8em;
 }
 
-.menuContent .menuLink {
-  color: black;
-  font-size: 2em;
-}
 
 @media (max-width: 920px) {
   .menu {

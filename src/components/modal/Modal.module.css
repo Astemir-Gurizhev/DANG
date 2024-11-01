@@ -1,0 +1,31 @@
+/* Modal.module.css */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .content {
+    background: rgb(255, 255, 255);
+    padding: 3em;
+    border-radius: 8px;
+    color: black;
+    width: 70vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    justify-content: space-between;
+  }
+
+  
+
