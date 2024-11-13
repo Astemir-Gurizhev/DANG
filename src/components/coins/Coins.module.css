@@ -60,11 +60,6 @@
     cursor: not-allowed;
   }
   
-  .pagination button:hover:not(:disabled) {
-    box-shadow: 0 0 18px 8px rgba(255, 0, 0, 0.575);
-    background: red;
-  }
-  
   .pagination button.activePage {
     background-color: rgb(54, 54, 54);
     color: white;
