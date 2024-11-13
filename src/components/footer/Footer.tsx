@@ -1,9 +1,12 @@
-import {Link} from "react-router-dom"
-
+import cn from "./Footer.module.css";
 function Footer() {
-    return (
-        <><h2>Подвал</h2></>
-    )
+  return (
+    <>
+      <footer>
+        <h2 className={cn.title}>2024 © DANG</h2>
+      </footer>
+    </>
+  );
 }
 
-export default Footer
+export default Footer;

@@ -4,7 +4,7 @@ import cn from "./Header.module.css";
 import logo from "../../assets/images/header/logo2.png";
 import tg from "../../assets/images/header/tg.png";
 import HeaderMenuItem from "./ui/MenuItem";
-import Modal from "../modal/modal";
+import Modal from "../modal/Modal"
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,6 +24,7 @@ const Header = () => {
             </Link>
             <ul className={cn.menu}>
               <HeaderMenuItem link="/" name="Home" />
+              <HeaderMenuItem link="/coin" name="Coins" />
               <HeaderMenuItem link="/about" name="About" />
               <HeaderMenuItem link="/contacts" name="Contacts" />
             </ul>
@@ -42,6 +43,11 @@ const Header = () => {
             <li onClick={toggleMenu}>
               <Link to="/" className={cn.menuLink}>
                 Home
+              </Link>
+            </li>
+            <li onClick={toggleMenu}>
+              <Link to="/coin" className={cn.menuLink}>
+                Coins
               </Link>
             </li>
             <li onClick={toggleMenu}>

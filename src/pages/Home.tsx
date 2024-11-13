@@ -1,9 +1,12 @@
-function Home() {
-    return (
-        <>
-            <h1> Главная </h1>
-        </>
-    )
-}
+import { Slider } from "../components/slider/Slider";
 
-export {Home}
+const Home = () => {
+  return (
+    <>
+        
+     <Slider/>
+    </>
+  );
+};
+
+export { Home };
