@@ -1,3 +1,4 @@
+
 .title {
     text-align: center;
     font-size: 2em;
@@ -9,6 +10,7 @@
 }
 
 .list {
+    padding-top: 1em;
     padding-bottom: 1em;
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
@@ -35,6 +37,38 @@
     animation: spin 1s linear infinite;
     margin-bottom: 20px;
 }
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 2em;
+    padding-bottom: 1em;
+  }
+  
+  .pagination button {
+    padding: 10px 15px;
+    border: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .pagination button:disabled {
+    background-color: #666666;
+    cursor: not-allowed;
+  }
+  
+  .pagination button:hover:not(:disabled) {
+    box-shadow: 0 0 18px 8px rgba(255, 0, 0, 0.575);
+    background: red;
+  }
+  
+  .pagination button.activePage {
+    background-color: rgb(54, 54, 54);
+    color: white;
+  }
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
